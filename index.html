@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>نَسَق — تصميم مواقع إلكترونية</title>
+<meta name="description" content="نَسَق: تصميم مواقع إلكترونية حسب احتياج مشروعك.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap">
+<style>
+:root{--navy:#0f2742;--teal:#1f9a94;--ivory:#faf6ec;--gold:#c9a24a;--bg:var(--ivory);--card:#fffdf7;--text:#13243a;--muted:#5a6878;--line:#e6dfcd;--shadow:0 10px 30px rgba(15,39,66,.10);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1a2d;--card:#12253c;--text:#f2ede0;--muted:#a9b6c4;--line:#24405c;--shadow:0 10px 30px rgba(0,0,0,.35)}}
+:root[data-theme="dark"]{--bg:#0b1a2d;--card:#12253c;--text:#f2ede0;--muted:#a9b6c4;--line:#24405c;--shadow:0 10px 30px rgba(0,0,0,.35)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Tajawal","Segoe UI",Tahoma,Arial,sans-serif;line-height:1.8;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;font-size:1.5rem;color:var(--teal)}
+nav{display:flex;gap:18px;font-size:.95rem}
+nav a{color:var(--muted);transition:color .2s}nav a:hover{color:var(--teal)}
+@media(max-width:700px){nav a:not(.keep){display:none}}
+.btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:700;padding:12px 26px;border-radius:999px;background:var(--teal);color:#fff;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(31,154,148,.35)}
+.btn.gold{background:var(--gold);color:#1b1608}.btn.gold:hover{box-shadow:0 10px 22px rgba(201,162,74,.4)}
+.btn.ghost{background:transparent;color:var(--text);border:1.5px solid var(--line)}
+.btn.ghost:hover{border-color:var(--teal);box-shadow:none}
+.hero{background:linear-gradient(160deg,var(--navy),#16406a);color:#f6f1e3;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;min-height:540px;padding-top:40px;padding-bottom:40px;position:relative;z-index:1}
+.orb{position:absolute;border-radius:50%;filter:blur(2px);transform:translateY(calc(var(--sy,0) * var(--k,.1) * 1px))}
+.o1{width:320px;height:320px;background:radial-gradient(circle,rgba(31,154,148,.45),transparent 70%);top:-60px;left:-60px;--k:.25}
+.o2{width:220px;height:220px;background:radial-gradient(circle,rgba(201,162,74,.35),transparent 70%);bottom:-40px;right:30%;--k:-.15}
+.hero h1{font-size:clamp(3rem,9vw,5.2rem);margin:0;line-height:1.1;color:var(--gold);font-weight:800}
+.tag{color:#bfe9e5;letter-spacing:.02em;margin:6px 0 18px}
+.hero p.lead{font-size:clamp(1.2rem,3vw,1.7rem);margin:0 0 26px;font-weight:500}
+.stage{perspective:900px;display:flex;justify-content:center}
+.browser{width:min(100%,380px);background:#f8f4e8;border-radius:14px;box-shadow:0 30px 60px rgba(0,0,0,.4);overflow:hidden;transform-style:preserve-3d;animation:spin 14s ease-in-out infinite}
+@keyframes spin{0%,100%{transform:rotateY(-18deg) rotateX(6deg)}50%{transform:rotateY(18deg) rotateX(-4deg) translateY(-8px)}}
+.bar{background:#e4dcc6;padding:9px 12px;display:flex;gap:6px;align-items:center}
+.bar i{width:9px;height:9px;border-radius:50%;background:#bcb39a;display:block}
+.bar b{flex:1;height:10px;border-radius:6px;background:#f3eddd;margin-inline-start:10px}
+.scr{padding:16px;display:grid;gap:10px}
+.s1{height:70px;border-radius:8px;background:linear-gradient(120deg,var(--teal),var(--navy))}
+.s2{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.s2 span{height:54px;border-radius:7px;background:#e9e1cb}
+.s3{height:10px;border-radius:5px;background:#d8cfb5;width:80%}.s3.b{width:55%}
+.s4{height:30px;width:90px;border-radius:99px;background:var(--gold)}
+section{padding:72px 0}
+section.alt{background:color-mix(in srgb,var(--card) 70%,var(--bg))}
+h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:0 0 8px;color:var(--navy)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) h2{color:var(--gold)}}
+:root[data-theme="dark"] h2{color:var(--gold)}
+h2::after{content:"";display:block;width:54px;height:3px;background:var(--gold);margin-top:8px;border-radius:2px}
+.sub{color:var(--muted);max-width:640px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:30px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow);transition:transform .25s}
+.card:hover{transform:translateY(-4px)}
+.num{width:42px;height:42px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800;margin-bottom:10px}
+.card h3{margin:0 0 6px;font-size:1.15rem}.card p{margin:0;color:var(--muted)}
+.price{text-align:center;font-size:clamp(1.4rem,4vw,2rem);font-weight:800;color:var(--teal);margin-top:26px}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+form{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow);margin-top:28px;max-width:680px}
+label{display:block;font-weight:700;margin:14px 0 6px;font-size:.95rem}
+input,textarea,select{width:100%;font:inherit;padding:11px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--text)}
+input:focus,textarea:focus,select:focus,button:focus-visible{outline:3px solid color-mix(in srgb,var(--teal) 45%,transparent);border-color:var(--teal)}
+textarea{min-height:100px;resize:vertical}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.note{font-size:.85rem;color:var(--muted);margin-top:12px}
+.err{color:#c0392b;font-weight:700;margin-top:10px;min-height:1.4em}
+.tabs{display:flex;gap:8px;margin-top:24px;flex-wrap:wrap}
+.tabs button{font:inherit;font-weight:700;padding:9px 20px;border-radius:99px;border:1.5px solid var(--line);background:var(--card);color:var(--text);cursor:pointer;transition:all .2s}
+.tabs button[aria-selected="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.stars{display:flex;gap:4px;direction:ltr;justify-content:flex-end}
+.stars button{font-size:2rem;line-height:1;background:none;border:0;cursor:pointer;color:var(--line);transition:transform .15s,color .15s;padding:2px}
+.stars button.on{color:var(--gold)}.stars button:hover{transform:scale(1.2)}
+.hidden{display:none}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+footer{background:var(--navy);color:#dfe6ee;padding:36px 0;text-align:center}
+footer .links{justify-content:center}footer a{color:#bfe9e5}
+footer small{display:block;margin-top:16px;opacity:.7}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr;text-align:center;min-height:auto}.stage{order:2}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.orb{transform:none}.browser{transform:rotateY(-10deg)}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="#top">نَسَق</a>
+<nav><a href="#about">نبذة</a><a href="#service">الخدمة</a><a href="#process">طريقة العمل</a><a href="#pricing">الأسعار</a><a href="#feedback">شاركنا رأيك</a><a class="keep btn" style="padding:6px 18px;color:#fff" href="#order">اطلب موقعك</a></nav></div></header>
+
+<main id="top">
+<div class="hero"><div class="orb o1"></div><div class="orb o2"></div>
+<div class="wrap"><div>
+<h1>نَسَق</h1><p class="tag">تصميم مواقع إلكترونية</p>
+<p class="lead">نصمم لك موقعًا يليق بمشروعك</p>
+<a class="btn gold" href="#order">اطلب موقعك</a></div>
+<div class="stage" aria-hidden="true"><div class="browser"><div class="bar"><i></i><i></i><i></i><b></b></div><div class="scr"><div class="s1"></div><div class="s2"><span></span><span></span><span></span></div><div class="s3"></div><div class="s3 b"></div><div class="s4"></div></div></div></div>
+</div></div>
+
+<section id="about"><div class="wrap reveal"><h2>نبذة عن نَسَق</h2>
+<p class="sub">نَسَق خدمة تصميم مواقع إلكترونية، نبنيها حسب احتياج كل عميل وطبيعة مشروعه.</p></div></section>
+
+<section id="service" class="alt"><div class="wrap"><div class="reveal"><h2>تفاصيل الخدمة</h2>
+<p class="sub">صفحات الموقع وميزاته تُحدَّد بحسب المشروع، ونتفق عليها معك قبل البدء.</p></div></div></section>
+
+<section id="process"><div class="wrap"><div class="reveal"><h2>طريقة العمل</h2></div>
+<div class="grid">
+<div class="card reveal"><div class="num">١</div><h3>فهم فكرة المشروع</h3><p>نستمع لفكرتك ونفهم ما تحتاجه.</p></div>
+<div class="card reveal"><div class="num">٢</div><h3>تحديد الصفحات والميزات</h3><p>نحدد معك الصفحات والميزات المطلوبة.</p></div>
+<div class="card reveal"><div class="num">٣</div><h3>إرسال السعر والتفاصيل</h3><p>نرسل لك السعر والتفاصيل لتقرر.</p></div>
+</div></div></section>
+
+<section id="pricing" class="alt"><div class="wrap reveal"><h2>الأسعار</h2>
+<div class="price">السعر حسب حجم الموقع ومتطلباته</div></div></section>
+
+<section id="order"><div class="wrap"><div class="reveal"><h2>طلب الخدمة</h2><p class="sub">عبّئ البيانات ثم اختر وسيلة الإرسال.</p></div>
+<form class="reveal" data-kind="order" novalidate>
+<label for="o-name">الاسم</label><input id="o-name" name="name" autocomplete="name">
+<label for="o-type">نوع الموقع المطلوب</label><input id="o-type" name="type" placeholder="مثال: موقع تعريفي، متجر…">
+<label for="o-desc">وصف مختصر للمشروع</label><textarea id="o-desc" name="desc"></textarea>
+<label for="o-extra">تفاصيل إضافية (اختياري)</label><textarea id="o-extra" name="extra"></textarea>
+<div class="err" role="alert"></div>
+<div class="acts"><button type="button" class="btn" data-send="wa">إرسال عبر واتساب</button><button type="button" class="btn ghost" data-send="mail">إرسال عبر البريد الإلكتروني</button></div>
+<p class="note">سيُفتح واتساب أو بريدك برسالة جاهزة، ولا يُعدّ الطلب مُرسَلًا إلا بعد أن تضغط «إرسال» هناك.</p></form></div></section>
+
+<section id="feedback" class="alt"><div class="wrap"><div class="reveal"><h2>شاركنا رأيك</h2><p class="sub">تقييمك أو شكواك تصلنا بشكل خاص ولا تُعرض للعامة.</p>
+<div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-tab="rate">تقييم</button><button role="tab" aria-selected="false" data-tab="complaint">تقديم شكوى</button></div></div>
+
+<form class="reveal" data-kind="rate" id="f-rate" novalidate>
+<label>تقييم تجربتك معنا أو تقييم الموقع</label>
+<div class="stars" id="stars" role="group" aria-label="التقييم من 1 إلى 5"></div>
+<label for="r-comment">تعليق (اختياري)</label><textarea id="r-comment" name="comment"></textarea>
+<div class="err" role="alert"></div>
+<div class="acts"><button type="button" class="btn" data-send="wa">إرسال عبر واتساب</button><button type="button" class="btn ghost" data-send="mail">إرسال عبر البريد الإلكتروني</button></div></form>
+
+<form class="reveal hidden" data-kind="complaint" id="f-complaint" novalidate>
+<label for="c-subject">موضوع الشكوى</label><input id="c-subject" name="subject">
+<label for="c-details">التفاصيل</label><textarea id="c-details" name="details"></textarea>
+<label for="c-contact">وسيلة تواصل (اختياري)</label><input id="c-contact" name="contact" placeholder="رقم أو بريد">
+<div class="err" role="alert"></div>
+<div class="acts"><button type="button" class="btn" data-send="wa">إرسال عبر واتساب</button><button type="button" class="btn ghost" data-send="mail">إرسال عبر البريد الإلكتروني</button></div></form>
+</div></section>
+
+<section id="contact"><div class="wrap reveal"><h2>التواصل</h2>
+<div class="links" id="contact-links"></div></div></section>
+</main>
+
+<footer><div class="wrap"><strong style="font-size:1.4rem;color:var(--gold)">نَسَق</strong><div>تصميم مواقع إلكترونية</div><div class="links" id="footer-links"></div><small>© نَسَق</small></div></footer>
+
+<script>
+// ===== إعدادات قابلة للتعديل =====
+var CONFIG={
+  brand:"نَسَق",
+  phoneDisplay:"+968 9859 5938",
+  waNumber:"96898595938",
+  email:"magicazoz20@gmail.com",
+  instagram:{label:"إنستغرام: @az__0o3",url:"https://www.instagram.com/az__0o3/"},
+  snapchat:{label:"سناب شات: rv01s",url:"https://www.snapchat.com/add/rv01s"}
+};
+// ===== روابط التواصل =====
+(function(){
+  var items=[
+    {t:"واتساب: "+CONFIG.phoneDisplay,u:"https://wa.me/"+CONFIG.waNumber},
+    {t:"البريد: "+CONFIG.email,u:"mailto:"+CONFIG.email},
+    {t:CONFIG.instagram.label,u:CONFIG.instagram.url},
+    {t:CONFIG.snapchat.label,u:CONFIG.snapchat.url}
+  ];
+  ["contact-links","footer-links"].forEach(function(id){
+    var box=document.getElementById(id);
+    items.forEach(function(i){
+      var a=document.createElement("a");a.href=i.u;a.textContent=i.t;
+      if(i.u.indexOf("http")===0){a.target="_blank";a.rel="noopener"}
+      if(id==="contact-links")a.className="btn ghost";
+      box.appendChild(a);
+    });
+  });
+})();
+// ===== النجوم =====
+var rating=0,starsBox=document.getElementById("stars");
+for(var s=1;s<=5;s++){(function(n){
+  var b=document.createElement("button");b.type="button";b.textContent="★";b.setAttribute("aria-label",n+" من 5");
+  b.addEventListener("click",function(){rating=n;paint()});starsBox.appendChild(b);
+})(s)}
+function paint(){[].forEach.call(starsBox.children,function(b,i){b.classList.toggle("on",i<rating)})}
+// ===== التبويبات =====
+document.querySelectorAll("[data-tab]").forEach(function(t){t.addEventListener("click",function(){
+  document.querySelectorAll("[data-tab]").forEach(function(x){x.setAttribute("aria-selected",x===t)});
+  document.getElementById("f-rate").classList.toggle("hidden",t.dataset.tab!=="rate");
+  document.getElementById("f-complaint").classList.toggle("hidden",t.dataset.tab!=="complaint");
+})});
+// ===== بناء الرسائل =====
+function val(f,n){var e=f.elements[n];return e?e.value.trim():""}
+function build(f){
+  var k=f.dataset.kind,none="—";
+  if(k==="order"){
+    if(!val(f,"name")||!val(f,"type")||!val(f,"desc"))return{err:"فضلًا أدخل الاسم ونوع الموقع ووصفًا مختصرًا للمشروع."};
+    return{title:"طلب خدمة تصميم موقع",lines:["الاسم: "+val(f,"name"),"نوع الموقع: "+val(f,"type"),"وصف المشروع: "+val(f,"desc"),"تفاصيل إضافية: "+(val(f,"extra")||none)]};
+  }
+  if(k==="rate"){
+    if(!rating)return{err:"فضلًا اختر عدد النجوم."};
+    return{title:"تقييم",lines:["عدد النجوم: "+rating+" من 5","التعليق: "+(val(f,"comment")||none)]};
+  }
+  if(!val(f,"subject")||!val(f,"details"))return{err:"فضلًا أدخل موضوع الشكوى وتفاصيلها."};
+  return{title:"شكوى",lines:["الموضوع: "+val(f,"subject"),"التفاصيل: "+val(f,"details"),"وسيلة التواصل: "+(val(f,"contact")||none)]};
+}
+document.querySelectorAll("form").forEach(function(f){
+  f.addEventListener("submit",function(e){e.preventDefault()});
+  f.querySelectorAll("[data-send]").forEach(function(btn){btn.addEventListener("click",function(){
+    var d=build(f),err=f.querySelector(".err");
+    if(d.err){err.textContent=d.err;return}
+    err.textContent="";
+    var body=CONFIG.brand+" — "+d.title+"\n\n"+d.lines.join("\n");
+    var url=btn.dataset.send==="wa"
+      ?"https://wa.me/"+CONFIG.waNumber+"?text="+encodeURIComponent(body)
+      :"mailto:"+CONFIG.email+"?subject="+encodeURIComponent(CONFIG.brand+" — "+d.title)+"&body="+encodeURIComponent(body);
+    window.open(url,btn.dataset.send==="wa"?"_blank":"_self");
+  })});
+});
+// ===== حركات التمرير =====
+var calm=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(!calm&&"IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(function(el,i){el.style.transitionDelay=(i%3)*80+"ms";io.observe(el)});
+  var hero=document.querySelector(".hero"),tick=false;
+  window.addEventListener("scroll",function(){if(tick)return;tick=true;requestAnimationFrame(function(){hero.style.setProperty("--sy",Math.min(window.scrollY,600));tick=false})},{passive:true});
+}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")})}
+</script>
+</body>
+</html>
+
